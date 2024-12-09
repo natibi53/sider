@@ -8,23 +8,23 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>Identifiant</th>
                 <td>{{ question.id }}</td>
             </tr>
             <tr>
-                <th>Entitled</th>
+                <th>Intitulé</th>
                 <td>{{ question.entitled }}</td>
             </tr>
             <tr>
-                <th>Response</th>
+                <th>Réponse</th>
                 <td>{{ question.response }}</td>
             </tr>
             <tr>
-                <th>DateStart</th>
+                <th>Date de début</th>
                 <td>{{ question.dateStart ? question.dateStart|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>DateEnd</th>
+                <th>Date de fin</th>
                 <td>{{ question.dateEnd ? question.dateEnd|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
