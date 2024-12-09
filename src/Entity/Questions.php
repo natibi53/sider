@@ -66,7 +66,7 @@ class Questions
         return $this->dateStart;
     }
 
-    public function setDateDebut(\DateTimeImmutable $dateStart): static
+    public function setDateStart(\DateTimeImmutable $dateStart): static
     {
         $this->dateStart = $dateStart;
 
