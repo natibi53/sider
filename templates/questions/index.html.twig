@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questions{% endblock %}
+
+{% block body %}
+    <h1>Liste des questions</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Identifiant | </th>
+                <th>Intitulé | </th>
+                <th>Réponse | </th>
+                <th>Heure du début de la question | </th>
+                <th>Heure de fin de la question | </th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.entitled }}</td>
+                <td>{{ question.response }}</td>
+                <td>{{ question.dateStart ? question.dateStart|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ question.dateEnd ? question.dateEnd|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_questions_show', {'id': question.id}) }}">Voir</a>
+                    <a href="{{ path('app_questions_edit', {'id': question.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_questions_new') }}">Créer une nouvelle question</a>
+{% endblock %}
