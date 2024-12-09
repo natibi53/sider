@@ -1,15 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DashboardController!{% endblock %}
+{% block title %}SIDER{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div>
+    <button>
+        <a href="">Jouer</a>
+    </button>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/IIA/2eme année/Cours/NoSQL/Sider/sider/src/Controller/DashboardController.php</code></li>
-        <li>Your template at <code>C:/IIA/2eme année/Cours/NoSQL/Sider/sider/templates/dashboard/index.html.twig</code></li>
-    </ul>
+    <button>
+        <a href="">S'inscrire</a>
+    </button>
+
+    <button>
+        <a href="">Se connecter</a>
+    </button>
+
+    <h3>Règles du jeu :</h3>
+    <p>
+        Voici un petit texte qui sera à compléter afin que les débiles puissent eux aussi jouer à ce superbe jeu qu'est SIDER !
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Joueurs</th>
+                <th scope="col">Scores</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Chris</th>
+                <td>22</td>
+            </tr>
+            <tr>
+                <th scope="row">Dennis</th>
+                <td>45</td>
+            </tr>
+            <tr>
+                <th scope="row">Sarah</th>
+                <td>29</td>
+            </tr>
+            <tr>
+                <th scope="row">Karen</th>
+                <td>36</td>
+            </tr>
+        </tbody>
+    </table>
+    
 </div>
 {% endblock %}
