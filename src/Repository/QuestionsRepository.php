@@ -16,7 +16,7 @@ class QuestionsRepository extends ServiceEntityRepository
         parent::__construct($registry, Questions::class);
     }
 
-    public function findActual()
+    public function findCurrent()
     {
         $today = new \DateTimeImmutable();
 

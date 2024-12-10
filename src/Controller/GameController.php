@@ -14,9 +14,11 @@ class GameController extends AbstractController
     #[Route('/game', name: 'app_game')]
     public function index(QuestionsRepository $questionsRepository, Request $request): Response
     {
-        $question = $questionsRepository->findActual();
+        $question = $questionsRepository->findCurrent()[0];
         $form = $this->createForm(AnswerQuestionGameType::class);
         $form->handleRequest($request);
+
+        
 
         return $this->render('game/index.html.twig', [
             'question' => $question,

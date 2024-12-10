@@ -4,9 +4,7 @@
 
 {% block body %}
 <div>
-    {% for question in question %}
-        {{ question.entitled }}
-    {% endfor %}
+    {{ question.entitled }}
 </div>
 {{ form.form }}
 {% endblock %}
