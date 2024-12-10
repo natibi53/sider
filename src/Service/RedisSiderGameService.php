@@ -48,4 +48,9 @@ class RedisSiderGameService
     {
         return $this->redis->lrange('score_history:'.$id, 0, 10);
     }
+    public function getPlayerData($id)
+    {
+        return $this->redis->hgetall("player:$id");
+    }
+
 }
