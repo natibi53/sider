@@ -20,33 +20,23 @@
     <p>
         Voici un petit texte qui sera à compléter afin que les débiles puissent eux aussi jouer à ce superbe jeu qu'est SIDER !
     </p>
-
-    <table>
-        <thead>
+    <div class="container mt-5">
+        <table class="table table-bordered border-dark text-center align-middle">
+            <thead class="table-light">
             <tr>
-                <th scope="col">Joueurs</th>
-                <th scope="col">Scores</th>
+                <th class="fw-bold">Player</th>
+                <th class="fw-bold">Score</th>
             </tr>
-        </thead>
+            </thead>
         <tbody>
+        {% for player in players %}
             <tr>
-                <th scope="row">Chris</th>
-                <td>22</td>
+                <th scope="row">{{ player.name }}</th>
+                <td>{{ player.score }}</td>
             </tr>
-            <tr>
-                <th scope="row">Dennis</th>
-                <td>45</td>
-            </tr>
-            <tr>
-                <th scope="row">Sarah</th>
-                <td>29</td>
-            </tr>
-            <tr>
-                <th scope="row">Karen</th>
-                <td>36</td>
-            </tr>
+        {% endfor %}
         </tbody>
     </table>
-    
+    </div>
 </div>
 {% endblock %}
