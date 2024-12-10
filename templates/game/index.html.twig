@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gaming Time{% endblock %}
+
+{% block body %}
+<div>
+    {% for question in question %}
+        {{ question.entitled }}
+    {% endfor %}
+</div>
+{{ form.form }}
+{% endblock %}
