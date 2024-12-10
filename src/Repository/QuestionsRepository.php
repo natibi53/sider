@@ -16,6 +16,19 @@ class QuestionsRepository extends ServiceEntityRepository
         parent::__construct($registry, Questions::class);
     }
 
+    public function findCurrent()
+    {
+        $today = new \DateTimeImmutable();
+
+        return $this->createQueryBuilder('q')
+            ->andWhere('q.dateStart <= :today')
+            ->andWhere('q.dateEnd >= :today')
+            ->setParameter('today', $today)
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
     //    /**
     //     * @return Questions[] Returns an array of Questions objects
     //     */
